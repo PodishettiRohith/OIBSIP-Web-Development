@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="todo-app">
+    <header>
+      <h1>Task Manager</h1>
+      <p>Organize your daily workflow</p>
+    </header>
+
+    <!-- Task Input Form -->
+    <form id="todo-form">
+      <input type="text" id="todo-input" placeholder="What needs to be done?" required>
+      <button type="submit" id="add-btn">Add Task</button>
+    </form>
+
+    <!-- Task Lists Container -->
+    <div class="lists-container">
+      <!-- Pending Tasks Section -->
+      <section class="task-section">
+        <div class="section-header">
+          <h2>Pending Tasks</h2>
+          <span class="badge" id="pending-count">0 pending</span>
+        </div>
+        <ul id="pending-list" class="task-list"></ul>
+        <p id="pending-empty" class="empty-msg">No pending tasks!</p>
+      </section>
+
+      <!-- Completed Tasks Section -->
+      <section class="task-section">
+        <div class="section-header">
+          <h2>Completed Tasks</h2>
+          <span class="badge completed-badge" id="completed-count">0 completed</span>
+        </div>
+        <ul id="completed-list" class="task-list"></ul>
+        <p id="completed-empty" class="empty-msg">No completed tasks yet.</p>
+      </section>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

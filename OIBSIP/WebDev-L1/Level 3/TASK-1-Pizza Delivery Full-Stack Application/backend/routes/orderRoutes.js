@@ -1,0 +1,10 @@
+const router = require('express').Router();
+const { createPaymentOrder, confirmOrder, updateOrderStatus, getMyOrders, getAllOrders, getAdminStats } = require('../controllers/orderController');
+const { verifyToken, verifyAdmin } = require('../middleware/authMiddleware');
+router.post('/payment/create', verifyToken, createPaymentOrder);
+router.post('/payment/confirm', verifyToken, confirmOrder);
+router.get('/my-orders', verifyToken, getMyOrders);
+router.get('/all', verifyAdmin, getAllOrders);
+router.get('/stats', verifyAdmin, getAdminStats);
+router.put('/:id/status', verifyAdmin, updateOrderStatus);
+module.exports = router;
